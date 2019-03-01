@@ -20,13 +20,8 @@ namespace MonoGameInvaders {
 
 		public virtual void Init() {
 			position.X = Global.Random(100, Global.width - 100);
-			//position.Y = Global.Random(-300, 0);
-			position.Y = Global.Random(75, Global.height - 400);
-
-			velocity.X = Global.Random(2, 5);
-			velocity.Y = Global.Random(8, 13);
-			//velocity.X = velocityInvader.X;
-			//velocity.Y = velocityInvader.Y;
+			position.Y = Global.Random(-100, -texture.Height - 1);
+			//position.Y = Global.Random(75, Global.height - 400);
 		}
 
 		public virtual void Update() {

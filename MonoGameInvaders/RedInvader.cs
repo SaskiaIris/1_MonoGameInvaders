@@ -14,12 +14,12 @@ namespace MonoGameInvaders {
 
 		public override void Init() {
 			base.Init();
-
+			velocity.X = 3;
+			velocity.Y = 10;
 		}
 
 		public override void Update() {
 			base.Update();
-
 		}
 	}
 }
