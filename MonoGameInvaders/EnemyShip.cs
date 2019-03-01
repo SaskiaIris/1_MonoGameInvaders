@@ -18,10 +18,10 @@ namespace MonoGameInvaders {
 
 		public EnemyShip() {
 			texture = Global.content.Load<Texture2D>("sprites/enemies/spr_enemy_ship");
-			Reset();
+			Init();
 		}
 
-		public void Reset() {
+		public void Init() {
 			position.X = Global.width/2;
 			position.Y = 50;
 

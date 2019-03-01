@@ -18,10 +18,10 @@ namespace MonoGameInvaders
 
         public Bullet() {
             texture = Global.content.Load<Texture2D>("sprites/spr_bullet");
-            Reset();
+            Init();
         }
 
-        public void Reset() {
+        public void Init() {
             isFired = false;
             position.X = -1000;
 			velocity.Y = 0;
@@ -30,7 +30,7 @@ namespace MonoGameInvaders
         public void Update() {
             if(isFired) {
                 if(position.Y < 0) {
-                    Reset();
+                    Init();
                 }
                 position += velocity;
             }

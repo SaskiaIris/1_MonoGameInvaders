@@ -113,8 +113,8 @@ namespace MonoGameInvaders
 
 			foreach(Shield aShield in shields) {
 				if(Overlaps(aShield.position, theBullet.position, aShield.texture, theBullet.texture)) {
-					theBullet.Reset();
-					aShield.position.X = -1000;
+					theBullet.Init();
+					aShield.Delete();
 				}
 
 				aShield.Update();
@@ -122,14 +122,14 @@ namespace MonoGameInvaders
 
 			foreach(Invader anInvader in invaders) {
 				if(Overlaps(anInvader.position, theBullet.position, anInvader.texture, theBullet.texture)) {
-					theBullet.Reset();
-					anInvader.Reset();
+					theBullet.Init();
+					anInvader.Init();
 					gameScore += Global.Random(400, 600);
 				}
 
 				foreach(Shield aShield in shields) {
 					if(Overlaps(aShield.position, anInvader.position, aShield.texture, anInvader.texture)) {
-						anInvader.Reset();
+						anInvader.Init();
 						aShield.position.X = -1000;
 						gameScore -= 500;
 					}
@@ -148,8 +148,8 @@ namespace MonoGameInvaders
 					theEnemyShip.position.X = -1000;
 					gameScore += 5000;
 				}
-				theBullet.Reset();
-				theEnemyShip.Reset();
+				theBullet.Init();
+				theEnemyShip.Init();
 			}
 
 			if(canUpdateScore) {

@@ -18,15 +18,20 @@ namespace MonoGameInvaders {
 			texture = Global.content.Load<Texture2D>("sprites/spr_shield");
 
 			this.shieldNumber = shieldNumber;
-			Reset();
+			Init();
 		}
 
-		public void Reset() {
+		public void Init() {
 			position.X = (Global.width / 4) * (this.shieldNumber) + Global.width/12;
 			position.Y = Global.height - 150;
 		}
 
 		public void Update() {
+		}
+
+		public void Delete() {
+			//deleteShield = null;
+			position.X = -1000;
 		}
 
 		public void Draw() {

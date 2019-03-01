@@ -15,30 +15,25 @@ namespace MonoGameInvaders {
 
 		public Invader(String assetName) {
 			texture = Global.content.Load<Texture2D>(assetName);
-			/*position.X = Global.Random(100, Global.width - 100);
-			position.Y = Global.Random(75, Global.height - 400);
-
-			velocity.X = Global.Random(2, 5);
-			velocity.Y = Global.Random(8, 13);*/
-			Reset();
+			Init();
 		}
 
-		public virtual void Reset() {
+		public virtual void Init() {
 			position.X = Global.Random(100, Global.width - 100);
 			//position.Y = Global.Random(-300, 0);
 			position.Y = Global.Random(75, Global.height - 400);
 
-			//velocity.X = Global.Random(2, 5);
-			//velocity.Y = Global.Random(8, 13);
-			velocity.X = 3;
-			velocity.Y = 10;
+			velocity.X = Global.Random(2, 5);
+			velocity.Y = Global.Random(8, 13);
+			//velocity.X = velocityInvader.X;
+			//velocity.Y = velocityInvader.Y;
 		}
 
 		public virtual void Update() {
 			position.X += velocity.X;
 
 			if(position.Y > Global.height) {
-				Reset();
+				Init();
 			} else if((position.X > Global.width - texture.Width) || (position.X < 0)) {
 				position.X -= velocity.X;
 				velocity.X *= -1;
