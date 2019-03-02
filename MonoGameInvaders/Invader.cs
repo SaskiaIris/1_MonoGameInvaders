@@ -12,6 +12,8 @@ namespace MonoGameInvaders {
 		public Vector2 position;
 		public Vector2 velocity;
 		public Texture2D texture;
+		public int frameCounter = 0;
+		public int startingDirection;
 
 		public Invader(String assetName) {
 			texture = Global.content.Load<Texture2D>(assetName);
@@ -22,6 +24,13 @@ namespace MonoGameInvaders {
 			position.X = Global.Random(100, Global.width - 100);
 			position.Y = Global.Random(-100, -texture.Height - 1);
 			//position.Y = Global.Random(75, Global.height - 400);
+			startingDirection = Global.Random(-1, 3);
+			if(startingDirection == 0) {
+				startingDirection = -1;
+			} else if(startingDirection == 2) {
+				startingDirection = 1;
+			}
+			velocity.X *= startingDirection;
 		}
 
 		public virtual void Update() {
