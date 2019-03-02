@@ -143,8 +143,8 @@ namespace MonoGameInvaders
 			}
 
 			if(Overlaps(theEnemyShip.position, theBullet.position, theEnemyShip.texture, theBullet.texture)) {
-				theEnemyShip.enemyShipLives--;
-				if(theEnemyShip.enemyShipLives < 1) {
+				theEnemyShip.lives--;
+				if(theEnemyShip.lives < 1) {
 					theEnemyShip.position.X = -1000;
 					gameScore += 5000;
 				}
