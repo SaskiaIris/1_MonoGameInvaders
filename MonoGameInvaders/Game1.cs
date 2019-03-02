@@ -109,10 +109,7 @@ namespace MonoGameInvaders
 				theBullet.Fire(thePlayer.position);
 			}
 
-            // Update the game objects
-   //         thePlayer.Update();
-   //         theBullet.Update();
-			//theEnemyShip.Update();
+            //Update the game objects
 			foreach(GameObject aGameObject in gameObjects) {
 				aGameObject.Update();
 				foreach(GameObject aCollidingGameObject in gameObjects) {
@@ -135,53 +132,6 @@ namespace MonoGameInvaders
 				}
 				
 			}
-
-			//foreach(Shield aShield in gameObjects) {
-			//	if(Overlaps(aShield.position, theBullet.position, aShield.texture, theBullet.texture)) {
-			//		theBullet.Init();
-			//		aShield.Delete();
-			//	}
-			//}
-
-			//foreach(Invader anInvader in gameObjects) {
-			//	if(Overlaps(anInvader.position, theBullet.position, anInvader.texture, theBullet.texture)) {
-			//		theBullet.Init();
-			//		anInvader.Init();
-			//		//gameScore += Global.Random(400, 600);
-			//	}
-
-			//	foreach(Shield aShield in gameObjects) {
-			//		if(Overlaps(aShield.position, anInvader.position, aShield.texture, anInvader.texture)) {
-			//			anInvader.Init();
-			//			aShield.position.X = -1000;
-			//			//gameScore -= 500;
-			//		}
-			//	}
-
-			//	//if(anInvader.position.Y > Global.height - 150) {
-			//	//	//gameScore -= 500;
-			//	//}
-
-			//	//anInvader.Update();
-			//}
-
-			//if(Overlaps(theEnemyShip.position, theBullet.position, theEnemyShip.texture, theBullet.texture)) {
-			//	theEnemyShip.lives--;
-			//	if(theEnemyShip.lives < 1) {
-			//		theEnemyShip.position.X = -1000;
-			//		//gameScore += 5000;
-			//	}
-			//	theBullet.Init();
-			//	theEnemyShip.Init();
-			//}
-
-			//if(canUpdateScore) {
-			//	gameScore++;
-			//	canUpdateScore = false;
-			//} else {
-			//	canUpdateScore = true;
-			//}
-
             base.Update(gameTime);
 		}
 
@@ -195,15 +145,6 @@ namespace MonoGameInvaders
             spriteBatch.Draw(background, Global.screenRect, Color.White);
 
 			// Draw the game objects
-			//         thePlayer.Draw();
-			//         theBullet.Draw();
-			//theEnemyShip.Draw();
-			//foreach(Invader anInvader in invaders) {
-			//	anInvader.Draw();
-			//}
-			//foreach(Shield aShield in shields) {
-			//	aShield.Draw();
-			//}
 			foreach(GameObject aGameObject in gameObjects) {
 				aGameObject.Draw();
 			}
