@@ -9,14 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 namespace MonoGameInvaders {
     class Bullet : GameObject {
         public Boolean isFired = false;
-        //public Vector2 position;
-        //public Vector2 velocity;
-        //public Texture2D texture;
-        //public float speed;
 
         public Bullet() : base("sprites/spr_bullet") {
-            //texture = Global.content.Load<Texture2D>();
-            //Init();
+
         }
 
         public override void Init() {
@@ -38,10 +33,6 @@ namespace MonoGameInvaders {
                 position += velocity;
             }
         }
-
-        //public override void Draw() {
-        //    Global.spriteBatch.Draw(texture, position, Color.White);
-        //}
 
         public void Fire(Vector2 startPosition) {
 			if(!isFired) {

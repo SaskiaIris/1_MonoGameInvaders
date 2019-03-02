@@ -13,6 +13,8 @@ namespace MonoGameInvaders {
 		public Vector2 velocity; //Travelspeed of the object
 		public Texture2D texture; //The sprite of the object
 
+		public int frameCounter;
+
 		public int lives; //The lives of an object
 		public int startingDirection; //Only used by the EnemyShip and Invader classes
 		public Boolean isEnemy; //Specifies whether the object is an enemy

@@ -7,13 +7,8 @@ using Microsoft.Xna.Framework.Input;
 namespace MonoGameInvaders
 {
     class Player : GameObject {
-		//public Vector2 position;
-		//public Vector2 velocity;
-		//public Texture2D texture;
-
 		public Player() : base("sprites/spr_ship") {
-            //texture = Global.content.Load<Texture2D>("sprites/spr_ship");
-            //Init();       
+  
         }
 
         public override void Init() {
@@ -22,7 +17,6 @@ namespace MonoGameInvaders
         }
 
         public override void Update() {
-		//public bool Update() {
             // Assume player is not moving
             velocity.X = 0;
 
@@ -39,11 +33,6 @@ namespace MonoGameInvaders
 
             // "clamp" the x-position to make sure it never goes out of screen bounds           
             position.X = MathHelper.Clamp(position.X, 0, Global.width - texture.Width);
-            //return true;
         }
-
-        //public void Draw() {
-        //    Global.spriteBatch.Draw(texture, position, Color.White);
-        //}
     }
 }
